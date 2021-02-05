@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Provider } from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import store from './store/store'
+
+import ListaCompras from './ListaCompras'
+import QtdLista from './QtdLista'
+import CategoriaLista from './CategoriaLista'
+import TipoLista from './TipoLista'
+
+
+
+class App extends Component {
+  render(){
+    return (
+      <Provider store={store}>
+        <TipoLista />
+        <CategoriaLista />
+        <ListaCompras />
+        <QtdLista />
+      </Provider>
+    );
+  }
 }
 
 export default App;
